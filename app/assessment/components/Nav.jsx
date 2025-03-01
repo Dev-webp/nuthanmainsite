@@ -9,7 +9,7 @@ const Navbar = () => {
 
   const menuItems = [
     { name: "Home", path: "/" },
-    { name: "About Us", path: "/assessment" },
+    { name: "About us", path: "/about-us" },
     { name: "Migrate To", path: "/migrate" },
     { name: "Study Abroad", path: "/" },
     { name: "PR Visas", path: "/Permanent-Residency-Visas" },
@@ -219,6 +219,8 @@ const Navbar = () => {
 
       {/* Add margin to ensure content below is not hidden */}
       <div className="mt-0"></div> {/* Adjust the margin if necessary */}
+      
+      
     </header>
   );
 };

@@ -1,8 +1,7 @@
 import { Inter } from "next/font/google";
 import "../globals.css"; // Import global styles
 import Nav from "../components/Nav"; // Import Navbar
-import Footer from "../components/Footer"; // Import Footer
-
+import Footer from "../components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -15,7 +14,8 @@ export default function RootLayout({ children }) {
     <div className={inter.className}>
       <Nav />  {/* Navbar is now included globally */}
       <main>{children}</main> {/* This renders all child pages */}
-      <Footer />  {/* Add Footer if needed */}
+      <Footer/>
+
     </div>
   );
 }

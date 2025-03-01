@@ -57,7 +57,7 @@ const ContactPage = () => {
         
        
 
-      <Footer />
+    
       </div>
     </>
   );
