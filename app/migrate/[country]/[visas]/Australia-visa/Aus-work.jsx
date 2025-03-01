@@ -9,13 +9,11 @@ const Auswork = () => {
         overflow: 'hidden',
       }}>
         <div style={{ marginBottom: '5%' }}>
-          <h3 className="text-3xl mt-4 font-semibold text-black text-center">
+          <h3 className="text-2xl mt-4 font-semibold text-black text-center">
             Australia Work Visa - <span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
           </h3>
         </div>
-        <h3 className="text-black m-2 font-bold mb-4 text-lg sm:text-xl">
-          Australia Work Visa: Your Pathway to Opportunities Down Under
-        </h3>
+       
         <br />
         <p className="m-2">
           Are you considering expanding your career horizons by working in Australia? The <b>Australia Work Visa</b> offers a world of opportunities in a country renowned for its high quality of life, vibrant job market, and diverse landscapes. Whether you're seeking a temporary job, a skilled profession, or a long-term career in Australia, the right work visa can help you achieve your goals.

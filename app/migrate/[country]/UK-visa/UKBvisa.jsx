@@ -11,15 +11,13 @@ const Content = () => {
           overflow: 'hidden',
           marginTop:'-7%',
         }}>
-          <div style={{ marginBottom: '40px' }}>
-            <h3 className="text-3xl font-semibold text-black text-center">
-              UK Business Visa - <span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
+          <div style={{ marginBottom: '40px', marginTop:'20px' }}>
+            <h3 className="text-2xl font-semibold text-black text-center">
+              UK Business Visa: Your Gateway to Expanding Opportunities with - <span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
             </h3>
           </div>
       
-          <h3 style={{ color: "black", fontWeight: "bold", marginBottom: '20px' }}>
-            UK Business Visa: Your Gateway to Expanding Opportunities
-          </h3>
+         
           <p style={{ marginBottom: '20px' }}>
             Are you looking to expand your business or investment prospects in the UK? The UK, with its world-class infrastructure, stable economy, and global market access, offers tremendous opportunities for entrepreneurs, investors, and business professionals. Whether youre attending meetings, negotiating deals, or establishing long-term business ventures, a UK Business Visa can be your passport to success.
           </p>

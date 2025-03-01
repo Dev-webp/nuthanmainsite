@@ -7,14 +7,11 @@ const Newzework = () => {
             overflow: 'hidden',
         }}>
             <div style={{ marginBottom: '5%' }}>
-                <h3 className="text-3xl mt-4 font-semibold text-black text-center">
+                <h3 className="text-2xl mt-4 font-semibold text-black text-center">
                     New Zealand Work Visa  - VJC Overseas<span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
                 </h3>
             </div>
-            <h3 className="text-black text-center m-2 font-bold text-lg mb-6">
-            Your Pathway to Career Opportunities in New Zealand
-            </h3>
-
+           
             <p className='mb-6'>Are you looking to work in one of the world’s most beautiful and progressive countries? A New Zealand Work Visa allows you to live and work in New Zealand, experiencing a high quality of life while advancing your career in a country renowned for its innovative industries, strong economy, and welcoming people.</p>
             <p className='mb-6'>Whether you’re seeking a temporary role, a long-term job, or a path to permanent residency, we’re here to guide you through the process. At VJC Overseas, we specialize in making the visa application process as smooth and straightforward as possible.</p>
             <hr style={{ borderColor: 'black' }} className="mb-6" />

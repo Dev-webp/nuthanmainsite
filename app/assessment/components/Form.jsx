@@ -99,7 +99,8 @@ const Form = () => {
       setCurrentStep(0);
     }
   };
-
+  
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -114,9 +115,13 @@ const Form = () => {
 
       if (response.ok) {
         setPopupVisible(true);
-      } else {
-        setFormStatus('error');
+    
+        // Hide popup after 3-4 seconds
+        setTimeout(() => {
+          setPopupVisible(false);
+        }, 3000);
       }
+    
     } catch (error) {
       console.error('Error:', error.message);
       setFormStatus('error');
@@ -288,6 +293,8 @@ const Form = () => {
   <button type="submit" className="px-6 py-3 h-12 w-28 bg-orange-500 text-white flex items-center transition duration-300 ease-in-out hover:bg-orange-600" disabled={loading}>
     {loading ? 'Submitting...' : 'Submit'}
   </button>
+  
+
 </div>
 
 
@@ -310,6 +317,7 @@ const Form = () => {
         )}
 
     </div>
+  
 
   );
 };

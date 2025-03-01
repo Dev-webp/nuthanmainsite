@@ -7,14 +7,11 @@ const Newzebusiness = () => {
             overflow: 'hidden',
         }}>
             <div style={{ marginBottom: '5%' }}>
-                <h3 className="text-3xl mt-4 font-semibold text-black text-center">
+                <h3 className="text-2xl mt-4 font-semibold text-black text-center">
                     New Zealand Business Visa  - VJC Overseas<span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
                 </h3>
             </div>
-            <h3 className="text-black text-center m-2 font-bold text-lg mb-6">
-                Unlock New Zealand’s Business Potential with a Business Visa
-            </h3>
-
+            
             <p className='mb-6'>New Zealand is a hub of innovation, investment opportunities, and a business-friendly environment that attracts entrepreneurs, investors, and business professionals from across the globe. If you're looking to establish or grow your business in this vibrant country, the New Zealand Business Visa is your gateway to success.</p>
 
             <p>At VJC Overseas, we guide you through the entire process of applying for a New Zealand Business Visa, ensuring a smooth, efficient, and successful application. Whether you are looking to invest, establish a new business, or manage an existing one, we have the expertise to help you every step of the way.</p>

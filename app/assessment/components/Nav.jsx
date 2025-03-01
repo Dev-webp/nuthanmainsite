@@ -9,10 +9,10 @@ const Navbar = () => {
 
   const menuItems = [
     { name: "Home", path: "/" },
-    { name: "Assessment", path: "/" },
-    { name: "Migrate To", path: "/" },
+    { name: "About Us", path: "/assessment" },
+    { name: "Migrate To", path: "/migrate" },
     { name: "Study Abroad", path: "/" },
-    { name: "PR Visas", path: "/" },
+    { name: "PR Visas", path: "/Permanent-Residency-Visas" },
     { name: "Work Abroad", path: "/" },
     { name: "Job Seeker Visas", path: "/" },
     { name: "Visit Visas", path: "/" },
@@ -23,25 +23,26 @@ const Navbar = () => {
   ];
 
   const migrateSubPages = [
-    { name: "Germany", path:"/m" },
-    { name: "Canada", path: "/migrate#canada" },
-    { name: "United States", path: "/migrate#usa" },
-    { name: "Australia", path: "/migrate#australia" },
-    { name: "United Kingdom", path: "/migrate#uk" },
-    { name: "New Zealand", path: "/migrate#new-zealand" },
-    { name: "South Africa", path: "/migrate#south-africa" },
-    { name: "Hong Kong", path: "/migrate#hong-kong" },
-    { name: "Denmark", path: "/migrate#denmark" },
-    { name: "UAE", path: "/migrate#uae" },
+    { name: "Germany", path: "/migrate/germany" },
+    { name: "Canada", path: "/migrate/canada" },
+    { name: "United States", path: "/migrate/united-states" },
+    { name: "Australia", path: "/migrate/australia" },
+    { name: "United Kingdom", path: "/migrate/united-kingdom" },
+    { name: "New Zealand", path: "/migrate/new-zealand" },
+    { name: "South Africa", path: "/migrate/south-africa" },
+    { name: "Hong Kong", path: "/migrate/hong-kong" },
+    { name: "Denmark", path: "/migrate/denmark" },
+    { name: "UAE", path: "/migrate/uae" },
   ];
+
   const prVisaSubPages = [
-    { name: "Portugal Jobseeker", path: "/pr#residency" },
-    { name: "Schngen Visa", path: "/pr#schengen" },
-    { name: "Resume Marketing Service", path: "/pr#marketing" },
-    { name: "Study Abroad with VJC", path: "/pr#marketing" },
-    { name: "Sweden Jobseeker", path: "/pr#marketing" },
-    { name: "Visit Visa Services", path: "/pr#marketing" },
-    { name: "Work Abroad with VJC", path: "/pr#marketing" },
+    { name: "Canada Permanent Residency Visa", path: "/pr#residency" },
+    { name: "Australia Permanent Residency Visa", path: "/pr#schengen" },
+    { name: "UK Permanent Residency Visa", path: "/pr#marketing" },
+    { name: "New Zealand Permanent Residency Visa", path: "/pr#marketing" },
+    { name: "Germany Blue Card Visa", path: "/pr#marketing" },
+    { name: "USA Green Card", path: "/pr#marketing" },
+    
   
   
   ];
@@ -53,22 +54,28 @@ const Navbar = () => {
     <header>
       {/* White background section with logo, contact information, and marquee */}
       <div className="bg-white py-0 px-2 shadow-md z-50 fixed top-0 w-screen">
-      <div className="flex justify-between items-center max-w-7xl mx-auto">
-          {/* Logo Section */}
+        <div className="flex justify-between items-center max-w-7xl mx-auto">
+          {/* Logo (Always visible) */}
           <div className="flex items-center space-x-0">
             <Link href="/" className="text-lg font-bold">
-              <img src="/logo-1.webp" alt="Logo" className="h-14" />
+              <img src="/logo-1.webp" alt="Logo" className="h-14" /> {/* First logo */}
             </Link>
             <Link href="/" className="text-lg font-bold">
-              <img src="/logo-2.webp" alt="Logo" className="h-14" />
+              <img src="/logo-2.webp" alt="Logo" className="h-14" /> {/* Second logo */}
             </Link>
           </div>
 
+          {/* Hidden for md and sm */}
+          <div className="hidden md:flex items-center ml-4">
+            <img src="/message.gif" alt="News" className="h-8 w-8" /> {/* News Icon */}
+          </div>
 
           {/* Marquee Section */}
-
-
-         
+          <div className="marquee-container flex-1 mx-4 hidden md:block">
+            <p className="whitespace-nowrap animate-marquee uppercase text-sm text-gray-800">
+              Your Study and Work Abroad Opportunities Await! Explore the world with us. Learn more about visa programs and opportunities today!
+            </p>
+          </div>
 
           {/* Contact Information (Hidden on md and sm devices) */}
           <div className=" flex items-center space-x-2">
@@ -99,16 +106,14 @@ const Navbar = () => {
 
             {/* Phone Number with Icon */}
             <div>
-  <a
-    href="tel:+919160449000"
-    className="flex items-center text-white py-1 px-3 rounded-lg text-xs lg:text-sm whitespace-nowrap font-bold uppercase mr-3"
-  >
-    <img src="/phone.gif" alt="Phone" className="h-6 w-6 mr-2" />
-    {/* Test with a default Tailwind color like text-blue-500 */}
-    <span className="text-blue-500">+91 9160449000</span>
-  </a>
-</div>
-
+              <a
+                href="tel:+919160449000"
+                className="flex items-center text-white py-1 px-0 rounded-lg text-xs lg:text-sm whitespace-nowrap font-bold uppercase mr-3"
+              >
+                <img src="/phone.gif" alt="Phone" className="h-6 w-6 mr-1" />
+                <span className="text-custom-blue">+91 9160449000</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -117,52 +122,42 @@ const Navbar = () => {
 <div className="bg-orange-500 fixed top-12 w-screen z-50 hidden md:block">
   <nav className="flex justify-between items-center px-2 max-w-7xl py-1.5">
     <div className="flex flex-row -space-x-2 whitespace-nowrap">
-      {menuItems.map((item, index) => (
-        <React.Fragment key={item.name}>
-          {/* Check for "Migrate To" and "PR Visas" */}
-          {item.name === "Migrate To" || item.name === "PR Visas" ? (
-            <div className="relative group">
-              <span className="text-white text-sm lg:text-xs font-semibold px-3.5 hover:bg-white hover:bg-opacity-20 uppercase mt-1">
-                {item.name}
-              </span>
-              {/* Submenu */}
-              <div className="absolute left-0 hidden group-hover:block bg-gray-50 p-2 space-y-2 rounded-lg shadow-lg z-50">
-                {/* Conditionally Render Submenus */}
-                {(item.name === "Migrate To" ? migrateSubPages : prVisaSubPages).map((subItem) => (
-                  <Link
-                    href={subItem.path}
-                    key={subItem.name}
-                    className="text-orange-500 text-sm font-semibold px-4 py-2 rounded-lg hover:bg-orange-200 hover:bg-opacity-30 transition-all ease-in-out block"
-                  >
-                    {/* Ensure subItem.name and subItem.path are strings */}
-                    {typeof subItem.name === 'string' && typeof subItem.path === 'string' ? (
-                      subItem.name
-                    ) : (
-                      <span>Error: Invalid data</span>
-                    )}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ) : (
+    {menuItems.map((item, index) => (
+  <React.Fragment key={item.name}>
+    {item.name === "Migrate To" || item.name === "PR Visas" ? (
+      <div className="relative group">
+        <Link href={item.path} className="text-white text-sm lg:text-xs font-semibold px-3.5 hover:bg-white hover:bg-opacity-20 uppercase mt-1">
+          {item.name}
+        </Link>
+        {/* Dropdown for Migrate To and PR Visas */}
+        <div className="absolute left-0 hidden group-hover:block bg-gray-50 p-2 space-y-2 rounded-lg shadow-lg">
+          {(item.name === "Migrate To" ? migrateSubPages : prVisaSubPages).map((subItem) => (
             <Link
-              href={item.path}
-              className="text-white text-sm lg:text-xs font-semibold px-3.5 hover:bg-white hover:bg-opacity-20 uppercase mt-1"
+              href={subItem.path}
+              key={subItem.name}
+              className="text-orange-500 text-sm font-semibold px-4 py-2 rounded-lg hover:bg-orange-200 hover:bg-opacity-30 transition-all ease-in-out block"
             >
-              {/* Ensure item.name and item.path are strings */}
-              {typeof item.name === 'string' && typeof item.path === 'string' ? (
-                item.name
-              ) : (
-                <span>Error: Invalid data</span>
-              )}
+              {subItem.name}
             </Link>
-          )}
-          {index < menuItems.length - 1 && <span className="text-white hidden lg:inline-block">|</span>}
-        </React.Fragment>
-      ))}
+          ))}
+        </div>
+      </div>
+    ) : (
+      <Link
+        href={item.path}
+        className="text-white text-sm lg:text-xs font-semibold px-3.5 hover:bg-white hover:bg-opacity-20 uppercase mt-1"
+      >
+        {item.name}
+      </Link>
+    )}
+    {index < menuItems.length - 1 && <span className="text-white hidden lg:inline-block">|</span>}
+  </React.Fragment>
+))}
+
     </div>
   </nav>
 </div>
+
 
 {/* Small devices */}
 <div className="bg-orange-500 fixed top-12 w-screen z-50 md:hidden">

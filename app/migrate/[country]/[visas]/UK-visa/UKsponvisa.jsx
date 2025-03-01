@@ -12,16 +12,16 @@ const Content = () => {
           marginTop:'-7%',
         }}>
             <div style={{ marginBottom: '40px' }}>
-            <h3 className="text-3xl font-semibold text-black text-center">
+            <h3 className="text-2xl font-semibold text-black text-center">
               UK Sponsorship Visa - <span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
             </h3>
           </div>
-          <div style={{ marginBottom: '40px' }}>
+          {/* <div style={{ marginBottom: '40px' }}>
             <h3 className="text-3xl font-semibold text-black text-center">
               UK Sponsorship Visa: A Gateway to Opportunities for International Talent
             </h3>
           </div>
-      
+       */}
           <p style={{ marginBottom: '20px' }}>
             The UK has long been a popular destination for individuals seeking to advance their careers, pursue higher education, or embark on new business ventures. One of the key pathways to enter the UK for work or study is through a UK Sponsorship Visa, which allows employers or educational institutions to sponsor qualified international candidates to live and work in the country.
           </p>

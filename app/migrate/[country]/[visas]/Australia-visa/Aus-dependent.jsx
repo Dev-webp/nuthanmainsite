@@ -9,14 +9,11 @@ const Ausdependent = () => {
       overflow: 'hidden',
     }}>
       <div style={{ marginBottom: '5%' }}>
-        <h3 className="text-3xl mt-4 font-semibold text-black text-center">
+        <h3 className="text-2xl mt-4 font-semibold text-black text-center">
           Australia Dependent Visa - <span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
         </h3>
       </div>
-      <h3 className="text-black m-2 font-bold text-lg sm:text-xl mb-6">
-        Australia Dependent Visa: A Gateway for Family Reunification
-      </h3>
-
+     
       <p className="mb-6">
         Australia, with its vibrant culture, world-class education, and thriving economy, continues to be one of the top destinations for families around the world. For individuals working or studying in Australia, the <b>Dependent Visa</b> provides an opportunity to bring family members to join them, ensuring they are supported and united while they live and work in this beautiful country.
       </p>

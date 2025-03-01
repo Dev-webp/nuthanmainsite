@@ -9,12 +9,12 @@ const Ausstud = () => {
       overflow: 'hidden',
     }}>
       <div style={{ marginBottom: '5%' }}>
-        <h3 className="text-3xl mt-4 font-semibold text-black text-center">
+        <h3 className="text-2xl mt-4 font-semibold text-black text-center">
           Australia Student Visa  - <span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
         </h3>
       </div>
-      <h3 className="text-black m-2 font-bold mb-4 text-lg sm:text-xl">
-        Study in Australia with VJC Overseas: Affordable Education at Top-Ranked Universities
+      <h3 className="text-black m-2  mb-4 text-lxl sm:text-xl text-blue-500">
+        Affordable Education at Top-Ranked Universities
       </h3>
       <p className="m-2">
         Australia has long been a popular destination for international students, offering world-class education, diverse cultural experiences, and a safe environment to study and live. Whether you're planning to pursue undergraduate, postgraduate, or vocational courses, Australia provides an array of high-quality academic opportunities at competitive tuition rates. At VJC Overseas, we help you navigate the process of obtaining an Australian Study Visa and finding universities with affordable fees and strong global rankings.

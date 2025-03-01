@@ -7,7 +7,7 @@ const Newzeskillwork = () => {
         overflow: 'hidden',
     }}>
         <div style={{ marginBottom: '5%' }}>
-            <h3 className="text-3xl mt-4 font-semibold text-black text-center">
+            <h3 className="text-2xl mt-4 font-semibold text-black text-center">
             New Zealand Skilled Work Visa  - VJC Overseas<span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
             </h3>
         </div>

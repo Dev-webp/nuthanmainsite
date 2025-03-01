@@ -13,14 +13,12 @@ const Content = () => {
            
           }}>
           <div style={{ marginBottom: '50px' }}>
-            <h3 className="text-3xl font-semibold text-black text-center">
+            <h3 className="text-2xl font-semibold text-black text-center">
               Hong Kong Student Visa - <span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
             </h3>
           </div>
       
-          <h3 style={{ color: "black", fontWeight: "bold", marginBottom: '20px' }}>
-            VJC Overseas: Your Gateway to Studying in a Global Education Hub
-          </h3>
+         
           <p style={{ marginBottom: '20px' }}>
             Studying in Hong Kong offers a unique opportunity to experience world-class education in one of the most dynamic cities in Asia. Whether you`re pursuing undergraduate, postgraduate, or language studies, a Hong Kong Student Visa is your ticket to a truly international academic experience.
           </p>

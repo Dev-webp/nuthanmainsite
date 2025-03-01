@@ -9,13 +9,11 @@ const USAstud = () => {
             overflow: 'hidden',
         }}>
             <div style={{ marginBottom: '5%' }}>
-                <h3 className="text-3xl mt-4 font-semibold text-black text-center">
+                <h3 className="text-2xl mt-4 font-semibold text-black text-center">
                     USA Study Visa  - VJC Overseas<span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
                 </h3>
             </div>
-            <h3 className="text-black text-center m-2 font-bold text-lg mb-6">
-                USA Study Visa – Your Gateway to Education Abroad
-            </h3>
+          
 
             <p className='mb-6 m-2'>Studying in the United States is a dream for many international students, and with good reason. The U.S. boasts some of the world’s top universities, cutting-edge research facilities, and a diverse, multicultural environment that nurtures academic and personal growth. If you're planning to study in the USA, securing a USA student visa is the first critical step. Here at VJC Overseas, we make your study visa journey smooth and hassle-free with expert guidance every step of the way.</p>
 

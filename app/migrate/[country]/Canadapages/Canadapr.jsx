@@ -13,14 +13,10 @@ const Canadapr = () =>{
         >
             <div style={{ marginBottom: "40px" }}>
             <h3 className="text-2xl font-semibold text-black text-center">
-              Canada  Permanent Residence Visa - <span style={{ color: "rgb(220, 4, 4)" }}>VJC Overseas</span>
+            Canada Permanent Residence Visa: Your Pathway to a New Life in Canada - <span style={{ color: "rgb(220, 4, 4)" }}>VJC Overseas</span>
             </h3>
           </div>
-          <header style={{ marginBottom: "40px" }}>
-            <h1 className="text-2xl font-semibold text-black text-center">
-              Canada Permanent Residence Visa: Your Pathway to a New Life in Canada
-            </h1>
-          </header>
+          
     
           <article>
             <section style={{ marginBottom: "30px" }}>

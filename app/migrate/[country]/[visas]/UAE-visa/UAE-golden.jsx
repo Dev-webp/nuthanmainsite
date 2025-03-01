@@ -8,13 +8,11 @@ const UAEgolden = () => {
         overflow: 'hidden',
     }}>
         <div style={{ marginBottom: '5%' }}>
-            <h3 className="text-3xl mt-4 font-semibold text-black text-center">
-                UAE Golden Visa  - VJC Overseas<span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
+            <h3 className="text-2xl mt-4 font-semibold text-black text-center">
+                UAE Golden Visa: Everything You Need to Know - VJC Overseas<span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
             </h3>
         </div>
-        <h3 className="text-black text-center m-2 font-bold text-lg mb-6">
-        UAE Golden Visa: Everything You Need to Know | VJC Overseas
-        </h3>
+        
 
         <p className='mb-6 m-2'>At VJC Overseas, we help skilled professionals and workers secure employment opportunities in the UAE, one of the most dynamic and prosperous regions in the world. If you're planning to move to the UAE for work, understanding the work visa process, living expenses, lifestyle, and visa fees is essential. Our comprehensive guide will provide you with all the information you need to make an informed decision.</p>
         

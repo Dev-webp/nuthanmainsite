@@ -203,83 +203,131 @@ const visaComponents = {
 
 };
 
-const backgroundImages = 
-{ germany: '/germanyimg.jpg',
-  canada: "/canadabgimg.jpg",
-  "united-states": "/usabgimg.jpg",
-  australia:'/australiabgimg.jpg',
+const defaultBackgroundImages = {
+  germany: '/germanyimg.jpg',
+  canada: '/canadabgimg.jpg',
+  "united-states": '/usabgimg.jpg',
+  australia: '/australiabgimg.jpg',
+  // add other countries as needed
+};
 
- };
+
+ const visaBackgroundImages = {
+  "/migrate/germany/opportunity-card": "/vjc-gop.png",
+  "/migrate/germany/work-visa": "/vjc-gwvisa.jpg",
+  "/migrate/germany/student-visa":"/vjc-gsvisa.jpg",
+  "/migrate/germany/tourist-visa":"/vjc-gtvisa.jpg",
+  "/migrate/germany/dependent-visa":"/vjc-gdvisa.jpg",
+  "/migrate/germany/self-employment-visa":"/vjc-gsevisa.jpg",
+  "/migrate/canada/work-permit":"/vjc-cwpvisa.webp",
+  "/migrate/canada/student-visa":"/vjc-csvisa.webp",
+  "/migrate/canada/tourist-visa":"/vjc-ctvisa.jpeg",
+  "/migrate/canada/pr-visa":"/vjc-cprvisa.webp",
+  "/migrate/canada/family-sponsorship-visa":"/vjc-cfsvisa.webp", 
+  "/migrate/united-states/student-visa":"/vjc-usasvisa.jpg",
+  "/migrate/united-states/tourist-visa":"/vjc-usatvisa.jpg",
+  "/migrate/united-states/business-visa":"/vjc-usabvisa.jpeg",
+  "/migrate/united-states/H1B-visa":"/vjc-usahb1visa.jpg",
+  "/migrate/united-states/investor-visa":"/vjc-usainvestorvisa.jpg",
+  "/migrate/australia/student-visa":"/vjc-aussvisa.avif",
+  "/migrate/australia/business-visa":"/vjc-ausbvisa.jpg",
+  "/migrate/australia/work-visa":"/vjc-ausworkvisa.jpg",
+  "/migrate/australia/family-visa":"/vjc-ausfvisa.jpg",
+  "/migrate/australia/dependent-visa":"/vjc-ausdvisa.jpg",
+  "/migrate/australia/sponsorship-visa":"/vjc-aussponvisa.jpg",
+  "/migrate/united-kingdom/student-visa":"/vjc-uksvisa.jpg",
+  "/migrate/united-kingdom/tourist-visa":"/vjc-uktvisa.jpg",
+  "/migrate/australia/sponsorship-visa":"/vjc-aussponvisa.jpeg",
+
+
+
+  // If a visa path does not have a specific image, fallback to the country background.
+};
+
 
 export default function MigrateCountry() {
   const router = useRouter();
   const { country, visas } = useParams();
   const visasList = countryVisaData[country] || [];
   
-  const [selectedVisa, setSelectedVisa] = useState(null); // Track selected visa
-  const [selectedButton, setSelectedButton] = useState(null); // Track selected button
+  const defaultVisaTitle = visasList.length ? visasList[0].name : '';
+  const [selectedVisaPath, setSelectedVisaPath] = useState(null);
+  const [selectedVisaTitle, setSelectedVisaTitle] = useState(defaultVisaTitle);
   
   const VisaComponent = visas ? visaComponents[`${country}-${visas}`] : (country === 'germany' ? Goppcardvisa : null);
 
   useEffect(() => {
-    // Set the selected visa when the `visas` param changes
+    // When the URL param changes, update the state accordingly.
     if (visas) {
-      setSelectedVisa(`/migrate/${country}/${visas}`);
-      setSelectedButton(`/migrate/${country}/${visas}`);
+      const matchedVisa = visasList.find(v => v.path === `/migrate/${country}/${visas}`);
+      if (matchedVisa) {
+        setSelectedVisaTitle(matchedVisa.name);
+        setSelectedVisaPath(matchedVisa.path);
+      }
     }
-  }, [visas, country]);
+  }, [visas, country, visasList]);
 
-  const handleButtonClick = (path) => {
-    console.log('Button clicked:', path);
-    setSelectedVisa(path); // Set the selected visa component
-    setSelectedButton(path); // Set the selected button for background change
-    router.push(path); // Navigate to the selected visa page
+  const handleButtonClick = (visa) => {
+    console.log('Button clicked:', visa);
+    setSelectedVisaPath(visa.path);
+    setSelectedVisaTitle(visa.name);
+    router.push(visa.path);
   };
-  const paths = visasList.map(v => v.path);
-  const duplicates = paths.filter((path, index) => paths.indexOf(path) !== index);
-  console.log("Duplicate paths:", duplicates);
   
-  return (
-    <div>
-      {/* Background Image with Full Width and 500px Height */}
-      <div className="relative flex flex-col lg:flex-row items-center justify-between p-10 gap-10 min-h-screen"
-        style={{
-          backgroundImage: `url(${backgroundImages[country]})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}>
-        <div className="w-full lg:w-1/2 flex flex-col lg:items-start items-center lg:text-left text-center mt-8 lg:mt-8 lg:ml-16">
-          <h1 className="font-semibold uppercase text-teal-950 text-4xl lg:text-6xl lg:mb-4 lg:mt-4">Migrate to {country?.toUpperCase()}</h1>
-          <p className="text-black mt-4 lg:mt-2 font-bold">Discover endless opportunities with our expert immigration services.</p>
-        </div>
-        <div className="w-full lg:w-1/2 lg:mr-16">
-          <Form />
-        </div>
-      </div>
+  const currentBackgroundImage =
+    (selectedVisaPath && visaBackgroundImages[selectedVisaPath]) ||
+    defaultBackgroundImages[country];
   
-      <div className="flex flex-col lg:flex-row bg-gradient-to-bl from-white to-orange-50 px-8 py-10">
-        <div className="w-full lg:w-[350px] flex-shrink-0 px-4 flex flex-col items-center">
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-black bg-clip-text text-transparent mb-8 text-center">Visa Options for {country?.toUpperCase()}</h2>
-          <div className="flex flex-col gap-4 items-center w-full">
-            {visasList.map(({ name, path }) => (
-              <button
-                key={path}
-                onClick={() => handleButtonClick(path)}
-                className={`w-full lg:w-[350px] flex items-center justify-between text-lg font-semibold border border-orange-500 px-6 py-4 rounded-xl shadow-lg transition hover:bg-orange-500 hover:text-white
-                  ${selectedButton === path ? 'bg-orange-500 text-white' : 'bg-white text-black'}`}
-              >
-                {name}
-                <ArrowRight className="w-6 h-6" />
-              </button>
-            ))}
+    return (
+      <div>
+        {/* Dynamic Background Image with heading */}
+        <div
+  className="relative flex flex-col lg:flex-row items-center justify-between p-10 gap-10 min-h-screen"
+  style={{
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${currentBackgroundImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }}
+>
+
+          <div className="w-full lg:w-1/2 flex flex-col lg:items-start items-center lg:text-left text-center mt-8 lg:mt-8 lg:ml-16">
+            <h1 className="font-semibold uppercase bg-gradient-to-r from-white to-gray-500 inset-0 bg-black/60 bg-clip-text text-transparent text-4xl lg:text-6xl lg:mb-4 lg:mt-4">
+              Migrate to {selectedVisaTitle}
+            </h1>
+            <p className="text-white mt-4 lg:mt-2 font-bold">
+              Discover endless opportunities with our expert immigration services.
+            </p>
+          </div>
+          <div className="w-full lg:w-1/2 lg:mr-16">
+            <Form />
           </div>
         </div>
   
-        <div className="w-full lg:flex-1 overflow-y-auto max-h-[800px] px-8 rounded-xl shadow-md border border-gray-200 mt-8 lg:mt-0 lg:ml-9">
-          {VisaComponent ? <VisaComponent /> : <p>Select a visa option to view details.</p>}
+        <div className="flex flex-col lg:flex-row bg-gradient-to-bl from-white to-orange-50 px-8 py-10">
+          <div className="w-full lg:w-[350px] flex-shrink-0 px-4 flex flex-col items-center">
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-black bg-clip-text text-transparent mb-8 text-center">
+              Visa Options for {country?.toUpperCase()}
+            </h2>
+            <div className="flex flex-col gap-4 items-center w-full">
+              {visasList.map((visa) => (
+                <button
+                  key={visa.path}
+                  onClick={() => handleButtonClick(visa)}
+                  className={`w-full lg:w-[350px] flex items-center justify-between text-lg font-semibold border border-orange-500 px-6 py-4 rounded-xl shadow-lg transition hover:bg-orange-500 hover:text-white
+                    ${selectedVisaPath === visa.path ? 'bg-orange-500 text-white' : 'bg-white text-black'}`}
+                >
+                  {visa.name}
+                  <ArrowRight className="w-6 h-6" />
+                </button>
+              ))}
+            </div>
+          </div>
+  
+          <div className="w-full lg:flex-1 overflow-y-auto max-h-[800px] px-8 rounded-xl shadow-md border border-gray-200 mt-8 lg:mt-0 lg:ml-9">
+            {VisaComponent ? <VisaComponent /> : <p>Select a visa option to view details.</p>}
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
   
 }

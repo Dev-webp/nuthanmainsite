@@ -9,11 +9,11 @@ const Ausbusiness = () => {
       overflow: 'hidden',
     }}>
       <div style={{ marginBottom: '5%' }}>
-        <h3 className="text-3xl mt-4 font-semibold text-black text-center">
+        <h3 className="text-2xl mt-4 font-semibold text-black text-center">
           Australia Business Visa  - <span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
         </h3>
       </div>
-      <h3 className="text-black text-center m-2 font-bold mb-4 text-lg sm:text-xl mb-6">
+      <h3 className="text-black text-center m-2 text-blue-600 mb-4 text-lxl sm:text-xl mb-6">
         Australia Business Visa: Your Gateway to Entrepreneurial Success in Australia
       </h3>
 

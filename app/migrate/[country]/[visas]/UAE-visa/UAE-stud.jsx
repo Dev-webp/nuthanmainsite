@@ -7,12 +7,12 @@ const UAEstud = () => {
         overflow: 'hidden',
     }}>
         <div style={{ marginBottom: '5%' }}>
-            <h3 className="text-3xl mt-4 font-semibold text-black text-center">
+            <h3 className="text-2xl mt-4 font-semibold text-black text-center">
                 UAE Student Visa  - VJC Overseas<span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
             </h3>
         </div>
-        <h3 className="text-black text-center m-2 font-bold text-lg mb-6">
-        UAE Student Visa – Your Gateway to World-Class Education
+        <h3 className="text-blue-500 text-start m-2 font-bold text-lg mb-6">
+        Your Gateway to World-Class Education
         </h3>
 
         <p className='mb-6 m-2'>Studying in the United Arab Emirates (UAE) offers an unparalleled opportunity to experience an innovative and diverse educational environment, surrounded by state-of-the-art infrastructure and rich cultural experiences. Whether you’re aiming to study at one of the top universities in the region or pursuing a specialized course, VJC Overseas is here to guide you through the process of securing your UAE Student Visa and ensuring your smooth transition to a vibrant academic life.</p>

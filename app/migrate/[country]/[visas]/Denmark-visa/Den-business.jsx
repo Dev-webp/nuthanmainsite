@@ -9,11 +9,11 @@ const Denbusiness = () => {
             overflow: 'hidden',
         }}>
             <div style={{ marginBottom: '5%' }}>
-                <h3 className="text-3xl mt-4 font-semibold text-black text-center">
+                <h3 className="text-2xl mt-4 font-semibold text-black text-center">
                     Denmark Business Visa  - VJC Overseas<span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
                 </h3>
             </div>
-            <p className="text-black m-2 text-lg sm:text-xl mb-6">
+            <p className='mb-6'>
                 Are you planning to explore business opportunities in Denmark? Whether you are attending meetings, conferences, negotiations, or expanding your business network, a <b>Denmark Business Visa</b> is your gateway to engaging with Denmark’s vibrant economy. At VJC Overseas, we simplify the process of obtaining a business visa for Denmark, ensuring a smooth and hassle-free experience.
             </p>
 

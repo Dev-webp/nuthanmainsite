@@ -8,14 +8,12 @@ const Ausfamily = () => {
       fontFamily: "Times New Roman", backgroundColor: 'white', position: 'relative', overflow: 'hidden',
     }}>
       <div style={{ marginBottom: '5%' }}>
-        <h3 className="text-3xl mt-4 font-semibold text-black text-center">
+        <h3 className="text-2xl mt-4 font-semibold text-black text-center">
           Australia Family Visa - <span className="text-red-600">VJC Overseas</span>
         </h3>
       </div>
 
-      <h3 className="text-black m-2 font-bold text-lg sm:text-xl mb-6">
-        Australia Family Visa: A Gateway to Reunite Loved Ones
-      </h3>
+      
 
       <p className="mb-6">
         Australia is a dream destination for many families across the globe, offering world-class healthcare, education, and a high standard of living. If you're looking to bring your family members to Australia, the <strong>Australia Family</strong> Visa is the perfect pathway for you. Whether you wish to reunite with your spouse, children, parents, or other close relatives, Australia’s family reunion visa programs offer various options to suit different circumstances.

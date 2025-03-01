@@ -12,14 +12,12 @@ const Content = () => {
           }}>
            
           <div style={{ marginBottom: '40px' }}>
-            <h3 className="text-3xl font-semibold text-black text-center">
+            <h3 className="text-2xl font-semibold text-black text-center">
             Hong Kong Bussiness Visa - <span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
             </h3>
           </div>
       
-          <h3 className="text-3xl font-semibold text-black text-center">
-        Hong Kong Business Visa: A Comprehensive Guide for VJC Overseas
-      </h3>
+          
     
 
     <h3 style={{ color: "black", fontWeight: "bold", marginBottom: '20px' }}>

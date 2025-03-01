@@ -9,14 +9,11 @@ const Aussponsor = () => {
             overflow: 'hidden',
         }}>
             <div style={{ marginBottom: '5%' }}>
-                <h3 className="text-3xl mt-4 font-semibold text-black text-center">
-                    Australia Sponsorship Visa - <span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
+                <h3 className="text-2xl mt-4 font-semibold text-black text-center">
+                    Australia Sponsorship Visa: Unlock Your Path to Opportunities with - <span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
                 </h3>
             </div>
-            <h3 className="text-black m-2 font-bold mb-4 text-lg sm:text-xl mb-6">
-                Australia Sponsorship Visa: Unlock Your Path to Opportunities with VJC Overseas
-            </h3>
-
+           
             <p className="m-2 mb-6">
                 Are you looking to move to Australia for work, study, or long-term settlement? One of the most sought-after pathways is through an Australia Sponsorship Visa, a system that enables individuals to live, work, and thrive in one of the world’s most dynamic countries. At VJC Overseas, we are committed to helping you navigate the complexities of Australia’s immigration process, ensuring that you find the right sponsorship visa suited to your skills, background, and aspirations.
             </p>

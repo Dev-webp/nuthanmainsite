@@ -7,11 +7,11 @@ const Newzepr = () => {
         overflow: 'hidden',
     }}>
         <div style={{ marginBottom: '5%' }}>
-            <h3 className="text-3xl mt-4 font-semibold text-black text-center">
+            <h3 className="text-2xl mt-4 font-semibold text-black text-center">
             New Zealand Permanent Resident Visa  - VJC Overseas<span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
             </h3>
         </div>
-        <h3 className="text-black text-center m-2 font-bold text-lg mb-6">
+        <h3 className="text-blue-500 text-center m-2 font-bold text-lg mb-6">
         Your Pathway to a New Life in New Zealand
         </h3>
         <p className='mb-6'>Are you looking to make New Zealand your permanent home? Whether you’re attracted by the stunning landscapes, the vibrant culture, or the high quality of life, a New Zealand Permanent Resident Visa (PR) allows you to live, work, and study indefinitely in this beautiful country. At VJC Overseas, we guide you through the entire process, ensuring a smooth and hassle-free application.</p>

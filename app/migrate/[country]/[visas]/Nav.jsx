@@ -9,7 +9,7 @@ const Navbar = () => {
 
   const menuItems = [
     { name: "Home", path: "/" },
-    { name: "Assessment", path: "/" },
+    { name: "About us", path: "/" },
     { name: "Migrate To", path: "/" },
     { name: "Study Abroad", path: "/" },
     { name: "PR Visas", path: "/" },

@@ -12,15 +12,15 @@ const Content = () => {
           marginTop:'-7%',
         }}>
              <div style={{ marginBottom: '40px' }}>
-            <h3 className="text-3xl font-semibold text-black text-center">
+            <h3 className="text-2xl font-semibold text-black text-center">
               UK Tourist Visa - <span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
             </h3>
           </div>
-          <div style={{ marginBottom: '40px' }}>
+          {/* <div style={{ marginBottom: '40px' }}>
             <h3 className="text-3xl font-semibold text-black text-center">
               UK Tourist Visa: Your Gateway to Exploring the Best of the United Kingdom
             </h3>
-          </div>
+          </div> */}
       
           <h3 style={{ color: "black", fontWeight: "bold", marginBottom: '20px' }}>
             Your Trusted Partner for UK Tourist Visa Applications

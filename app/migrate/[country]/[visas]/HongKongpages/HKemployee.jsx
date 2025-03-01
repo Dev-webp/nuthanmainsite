@@ -11,14 +11,12 @@ const Content = () => {
         overflow: 'hidden',
       }}>
       <div style={{ marginBottom: '40px' }}>
-        <h3 className="text-3xl font-semibold text-black text-center">
+        <h3 className="text-2xl font-semibold text-black text-center">
           Hong Kong Employment Visa - <span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
         </h3>
       </div>
   
-      <h3 style={{ color: "black", fontWeight: "bold", marginBottom: '20px' }}>
-        Your Gateway to Working in Asia`s Financial Hub
-      </h3>
+     
       <p style={{ marginBottom: '20px' }}>
         Hong Kong, often regarded as one of the most dynamic financial and business hubs in the world, attracts professionals from all over the globe. Whether you’re looking to advance your career in finance, technology, or another field, obtaining an Employment Visa for Hong Kong is an essential step. At VJC Overseas, we are dedicated to helping you navigate the application process smoothly and efficiently, so you can focus on making the most of your career opportunities in this vibrant city.
       </p>

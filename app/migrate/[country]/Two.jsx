@@ -3,6 +3,14 @@ import React, { useState, useEffect } from "react";
 import { useRouter, useParams } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import Goppcardvisa from "./Germany-visa/Goppcardvisa";
+import Canadapr from "./canadapages/Canadapr";
+import Ausstud from "./Australia-visa/Aus-stud";
+import USAstud from "./USA-visa/USA-stud";
+import UKBvisa from "./UK-visa/UKBvisa";
+import HKstudentvisa from "./HongKongpages/HKstudentvisa";
+import Newzepr from "./Newzealand-visa/Newze-pr"
+import Denbusiness from "./Denmark-visa/Den-business"
+import UAEstud from "./UAE-visa/UAE-stud";
 
 import Form from "../Form";
 
@@ -85,23 +93,30 @@ const countryVisaData = {
 };
 
 const visaComponents = {
-  "opportunity-card": Goppcardvisa,
-  
+  germany: Goppcardvisa, // Default component for Germany
+  canada: Canadapr, // Default component for Canada
+  "united-states":USAstud,
+  australia:Ausstud,
+  "united-kingdom":UKBvisa,
+  "new-zealand":Newzepr,
+  "south-africa":USAstud,
+  "hong-kong":HKstudentvisa,
+  denmark:Denbusiness,
+  uae:UAEstud,
 };
 
 const backgroundImages = {
   germany: "/germanybgimg.jpg",
   canada: "/canadabgimg.jpg",
   "united-states": "/usabgimg.jpg",
-  australia:'/australiabgimg.jpg',
-
+  australia: "/australiabgimg.jpg",
 };
 
 const MigrateCountry = () => {
   const router = useRouter();
   const { country, visa } = useParams();
   const visas = countryVisaData[country] || [];
-  const VisaComponent = visaComponents[visa] || null;
+  const DefaultVisaComponent = visaComponents[country] || null;
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   useEffect(() => {
@@ -109,18 +124,26 @@ const MigrateCountry = () => {
   }, []);
 
   return (
-    <div className={`relative bg-cover bg-center min-h-screen ${isImageLoaded ? "bg-loaded" : "bg-loading"}`}
-    >
-      <div className="relative flex flex-col lg:flex-row items-center justify-between p-10 gap-10 min-h-screen" style={{
-      backgroundImage: `url(${backgroundImages[country]})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-    }}>
+    <div className={`relative bg-cover bg-center min-h-screen ${isImageLoaded ? "bg-loaded" : "bg-loading"}`}>
+      <div
+        className="relative flex flex-col lg:flex-row items-center justify-between p-10 gap-10 min-h-screen"
+        style={{
+          backgroundImage: `url(${backgroundImages[country]})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="w-full lg:w-1/2 lg:ml-16 mt-[-2rem] text-center lg:text-left">
-          <h1 className="font-semibold uppercase leading-tight text-teal-950 text-3xl sm:text-4xl md:text-5xl lg:text-[3.50rem] mt-12 sm:mt-12" style={{ fontFamily: "Times New Roman, serif" }}>
+          <h1
+            className="font-semibold uppercase leading-tight text-teal-950 text-3xl sm:text-4xl md:text-5xl lg:text-[3.50rem] mt-12 sm:mt-12"
+            style={{ fontFamily: "Times New Roman, serif" }}
+          >
             Migrate to {country.charAt(0).toUpperCase() + country.slice(1)}
           </h1>
-          <p className="flex text-black tracking-tight text-center lg:text-left md:font-medium max-w-xl lg:max-w-lg mt-6 font-bold" style={{ fontFamily: "Times New Roman, serif" }}>
+          <p
+            className="flex text-black tracking-tight text-center lg:text-left md:font-medium max-w-xl lg:max-w-lg mt-6 font-bold"
+            style={{ fontFamily: "Times New Roman, serif" }}
+          >
             Discover endless opportunities with our expert immigration services. Whether you’re looking to study or work abroad, we help make your dreams a reality.
           </p>
         </div>
@@ -150,7 +173,7 @@ const MigrateCountry = () => {
         </div>
 
         <div className="w-full lg:flex-1 ml-10 overflow-y-auto max-h-[800px] px-8 rounded-xl shadow-md border border-gray-200 mt-8 lg:mt-0">
-          {VisaComponent ? <VisaComponent /> : <Goppcardvisa />}
+          {DefaultVisaComponent ? <DefaultVisaComponent /> : <p>Select a visa option to view details.</p>}
         </div>
       </div>
     </div>

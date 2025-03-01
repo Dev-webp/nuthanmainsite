@@ -12,12 +12,12 @@ const Content = () => {
           marginTop:'-7%',
         }}>
             <div style={{ marginBottom: '40px' }}>
-            <h3 className="text-3xl font-semibold text-black text-center">
+            <h3 className="text-2xl font-semibold text-black text-center">
               UK Innovator Visa - <span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
             </h3>
           </div>
           <div style={{ marginBottom: '40px' }}>
-            <h3 className="text-3xl font-semibold text-black text-center">
+            <h3 className="text-1xl font-semibold text-blue-500 text-center">
               Unlocking Opportunities with the UK Innovator Visa: A Gateway to Entrepreneurial Success
             </h3>
           </div>

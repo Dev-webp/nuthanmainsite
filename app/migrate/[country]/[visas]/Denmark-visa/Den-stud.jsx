@@ -7,13 +7,11 @@ const Denstud = () => {
       overflow: 'hidden',
   }}>
       <div style={{ marginBottom: '5%' }}>
-          <h3 className="text-3xl mt-4 font-semibold text-black text-center">
+          <h3 className="text-2xl mt-4 font-semibold text-black text-center">
               Denmark Student Visa  - VJC Overseas<span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
           </h3>
       </div>
-      <p className="text-black m-2 text-lg text-center sm:text-xl mb-6 font-bold">
-      Denmark Student Visa Guide for VJC Overseas
-      </p>
+    
       <p className='mb-6'>Studying in Denmark offers students an excellent opportunity to experience world-class education, a high standard of living, and an internationally recognized degree. At VJC Overseas, we guide you through every step of obtaining a Denmark student visa, ensuring a smooth application process so you can focus on your academic journey.</p>
       <div className="flex flex-col lg:flex-row items-start h-auto lg:space-x-6 space-y-4 lg:space-y-0">
           <div className="flex-shrink-0 mx-auto lg:mx-0">

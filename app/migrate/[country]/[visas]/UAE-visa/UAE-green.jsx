@@ -7,12 +7,12 @@ const UAEgreen = () => {
             overflow: 'hidden',
         }}>
             <div style={{ marginBottom: '5%' }}>
-            <h3 className="text-3xl mt-4 font-semibold text-black text-center">
+            <h3 className="text-2xl mt-4 font-semibold text-black text-center">
                 UAE Green Visa  - VJC Overseas<span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
             </h3>
         </div>
            
-            <h3 className="text-black text-center m-2 font-bold text-lg mb-6">
+            <h3 className="text-blue-500 text-start m-2 font-bold text-lg mb-6">
                 Unlock Your Future in the UAE with a Green Visa
             </h3>
 
