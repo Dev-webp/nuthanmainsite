@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import FloatingWhatsApp from "@/app/components/FloatingWhatsapp";
 import Nav from "@/app/components/Nav";
-
+import Aichat from "@/app/components/Aichat";
 import TawkToChat from "@/app/components/TawkToChat";
 
 export const metadata: Metadata = {
@@ -47,6 +47,7 @@ export default function RootLayout({
         {children}
         <FloatingWhatsApp />
         <TawkToChat/>
+        <Aichat/>
       </body>
     </html>
   );
