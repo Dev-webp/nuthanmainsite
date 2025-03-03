@@ -1,6 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState } from "react";
 import { MessageSquare, X, Clipboard } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -9,7 +8,8 @@ export default function AIChat() {
   const [input, setInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [chatPosition, setChatPosition] = useState({ bottom: 10, right: 10 });
+  const [chatStage, setChatStage] = useState(null);
+  const [userData, setUserData] = useState({ name: "", phone: "" });
 
   const predefinedQuestions = [
     "What are your services?",
@@ -19,104 +19,96 @@ export default function AIChat() {
     "Can I get a refund?",
   ];
 
-  useEffect(() => {
-    const adjustPosition = () => {
-      const floatingElements = document.querySelectorAll(".floating-element");
-      let offset = 0;
-      floatingElements.forEach(() => {
-        offset += 50; // Adjust dynamically
-      });
-      setChatPosition({ bottom: 10 + offset, right: 10 });
-    };
+  const sendMessage = async (messageContent) => {
+    const userMessage = { role: "user", content: messageContent };
+    setMessages((prev) => [...prev, userMessage]);
 
-    adjustPosition();
-    window.addEventListener("resize", adjustPosition);
-    return () => window.removeEventListener("resize", adjustPosition);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setMessages([...messages]);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [messages]);
-
-  const sendMessage = async () => {
-    if (!input.trim()) return;
-
-    const userMessage = { role: "user", content: input };
-    setMessages([...messages, userMessage]);
     setInput("");
     setLoading(true);
 
-    try {
-      const res = await axios.post("/api/chat", { message: input });
-      const botMessage = { role: "bot", content: res.data.response };
-      setMessages([...messages, userMessage, botMessage]);
-    } catch (error) {
-      console.error("Chat error:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+    let botResponse = "";
 
-  const handleQuestionClick = async (question) => {
-    setInput(question);
-    await sendMessage();
+    if (!chatStage) {
+      botResponse = "Before proceeding, may I know your name?";
+      setChatStage("askName");
+    } else if (chatStage === "askName") {
+      setUserData((prev) => ({ ...prev, name: messageContent }));
+      botResponse = `Thank you, ${messageContent}! Can you provide your mobile number?`;
+      setChatStage("askPhone");
+    } else if (chatStage === "askPhone") {
+      setUserData((prev) => ({ ...prev, phone: messageContent }));
+      botResponse = "Thank you! We will get back to you shortly.";
+      setChatStage("completed");
+    }
+
+    setTimeout(() => {
+      setMessages((prev) => [...prev, { role: "bot", content: botResponse }]);
+      setLoading(false);
+    }, 1000);
   };
 
   return (
-    <div
-      className="fixed floating-element z-50"
-      style={{ bottom: chatPosition.bottom, right: chatPosition.right }}
-    >
-      {/* Chat Button */}
+    <div className="fixed z-50 bottom-20 right-3">
+      {/* Chat Button - Only Visible When Chat is Closed */}
       {!isOpen && (
         <motion.button
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           onClick={() => setIsOpen(true)}
-          className="flex items-center gap-1 px-2 py-2 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition relative text-xs"
+          className="flex items-center gap-1 px-3 py-2 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition text-sm"
         >
-          <MessageSquare size={18} />
+          <MessageSquare size={20} />
           <span>Chat</span>
         </motion.button>
       )}
 
-      {/* Chat Window */}
+      {/* Chat Box - Only Visible When Chat is Open */}
       {isOpen && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="w-64 bg-white shadow-xl rounded-md p-3 border border-gray-300"
-          style={{ boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)" }} // Highlight Chatbox
+          className="fixed bottom-16 right-4 w-72 bg-white shadow-xl rounded-md p-3 border border-gray-300"
+          style={{ boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)" }}
         >
-          <div className="flex justify-between items-center">
+          {/* Chat Header with Close Button */}
+          <div className="flex justify-between items-center border-b pb-2">
             <h2 className="text-sm font-bold">Chat with AI</h2>
-            <button onClick={() => setIsOpen(false)} className="text-red-600">
-              <X size={18} />
+            <button
+              onClick={() => setIsOpen(false)}
+              className="text-red-600 hover:text-red-800"
+            >
+              <X size={20} />
             </button>
           </div>
 
           {/* Predefined Questions */}
-          <div className="mt-2 space-y-1 border-b pb-1">
-            {predefinedQuestions.map((question, index) => (
-              <button
-                key={index}
-                onClick={() => handleQuestionClick(question)}
-                className="block w-full text-left px-2 py-1 bg-gray-100 rounded-md hover:bg-gray-200 transition text-xs"
-              >
-                {question}
-              </button>
-            ))}
-          </div>
+          {!chatStage && (
+            <div className="mt-2 space-y-1 border-b pb-1">
+              {predefinedQuestions.map((question, index) => (
+                <button
+                  key={index}
+                  onClick={() => sendMessage(question)}
+                  className="block w-full text-left px-2 py-1 bg-gray-100 rounded-md hover:bg-gray-200 transition text-xs"
+                >
+                  {question}
+                </button>
+              ))}
+            </div>
+          )}
 
           {/* Chat Messages */}
           <div className="h-48 overflow-y-auto p-1 space-y-1 text-xs">
             {messages.map((msg, index) => (
-              <div key={index} className={`p-1 rounded-md ${msg.role === "user" ? "bg-blue-100 text-right" : "bg-gray-100 text-left"}`}>
+              <div
+                key={index}
+                className={`p-2 rounded-md ${
+                  msg.role === "user"
+                    ? "bg-blue-100 text-right"
+                    : "bg-gray-100 text-left"
+                }`}
+              >
                 {msg.content}
                 {msg.role === "bot" && (
                   <button
@@ -132,18 +124,23 @@ export default function AIChat() {
           </div>
 
           {/* Input Field */}
-          <div className="flex items-center mt-1">
-            <input
-              type="text"
-              className="flex-grow p-1 border rounded-l-md text-xs focus:outline-none"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask something..."
-            />
-            <button onClick={sendMessage} className="p-1 bg-blue-600 text-white rounded-r-md text-xs">
-              Send
-            </button>
-          </div>
+          {chatStage && chatStage !== "completed" && (
+            <div className="flex items-center mt-2">
+              <input
+                type="text"
+                className="flex-grow p-1 border rounded-l-md text-xs focus:outline-none"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Type your response..."
+              />
+              <button
+                onClick={() => sendMessage(input)}
+                className="p-1 bg-blue-600 text-white rounded-r-md text-xs"
+              >
+                Send
+              </button>
+            </div>
+          )}
         </motion.div>
       )}
     </div>
