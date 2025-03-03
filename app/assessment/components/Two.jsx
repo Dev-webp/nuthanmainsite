@@ -311,7 +311,7 @@ const Migrate = () => {
               </p>
                   {/* Display country image below the description */}
                   <div className="text-center">
-                    <image
+                    <img
                       src={countriesData[selectedCountry]?.image}
                       alt={selectedCountry}
                       className="mx-auto mt-4 max-w-full h-auto rounded-lg shadow-md"

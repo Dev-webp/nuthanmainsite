@@ -17,7 +17,7 @@ const Newzework = () => {
             <hr style={{ borderColor: 'black' }} className="mb-6" />
             <div className="flex mb-6 flex-col lg:flex-row items-start h-auto lg:space-x-6 space-y-4 lg:space-y-0">
                 <div className="flex-shrink-0 justify-center mx-auto lg:mx-0">
-                    <img
+                    <image
                         src="/assets/Newzework.png"
                         alt="Australia Business Visa"
 

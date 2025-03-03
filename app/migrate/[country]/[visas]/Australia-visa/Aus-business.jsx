@@ -13,7 +13,7 @@ const Ausbusiness = () => {
           Australia Business Visa  - <span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
         </h3>
       </div>
-      <h3 className="text-black text-center m-2 text-blue-600 mb-4 text-lxl sm:text-xl mb-6">
+      <h3 className="text-black text-center m-2 mb text-lxl sm:text-xl mb-6">
         Australia Business Visa: Your Gateway to Entrepreneurial Success in Australia
       </h3>
 
@@ -27,7 +27,7 @@ const Ausbusiness = () => {
 
       <div className="flex-col lg:flex-row items-start h-auto lg:space-x-6 space-y-4 lg:space-y-0">
         <div className="flex justify-center m-6 flex-shrink-0 mx-auto lg:mx-0 ">
-          <img
+          <image
             src="/assets/Ausbusiness.png"
             alt="Australia Business Visa"
             

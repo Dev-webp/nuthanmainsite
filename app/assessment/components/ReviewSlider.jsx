@@ -64,7 +64,7 @@ const ReviewsSlider = () => {
           {reviews.map((review, index) => (
             <div key={index} className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-lg mb-6 border border-orange-500 h-[400px]">
               <div className="flex justify-center w-full mb-4" style={{marginBottom:'20px'}}>
-                <img
+                <image
                   src={review.photo}
                   alt={review.name}
                   className="w-24 h-24 object-cover rounded-full"
@@ -81,7 +81,7 @@ const ReviewsSlider = () => {
               <div className="text-yellow-400 mb-2">
                 {'★'.repeat(review.rating)}{'★'.repeat(5 - review.rating)}
               </div>
-              <h3 className="font-semibold text-xl text-gray-700 mb-2 font-bold">{review.name}</h3>
+              <h3 className="text-xl text-gray-700 mb-2 font-bold">{review.name}</h3>
             </div>
           ))}
         </Slider>

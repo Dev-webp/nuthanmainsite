@@ -58,16 +58,16 @@ const Navbar = () => {
           {/* Logo (Always visible) */}
           <div className="flex items-center space-x-0">
             <Link href="/" className="text-lg font-bold">
-              <img src="/logo-1.webp" alt="Logo" className="h-14" /> {/* First logo */}
+              <image src="/logo-1.webp" alt="Logo" className="h-14" /> {/* First logo */}
             </Link>
             <Link href="/" className="text-lg font-bold">
-              <img src="/logo-2.webp" alt="Logo" className="h-14" /> {/* Second logo */}
+              <image src="/logo-2.webp" alt="Logo" className="h-14" /> {/* Second logo */}
             </Link>
           </div>
 
           {/* Hidden for md and sm */}
           <div className="hidden md:flex items-center ml-4">
-            <img src="/message.gif" alt="News" className="h-8 w-8" /> {/* News Icon */}
+            <image src="/message.gif" alt="News" className="h-8 w-8" /> {/* News Icon */}
           </div>
 
           {/* Marquee Section */}
@@ -81,15 +81,15 @@ const Navbar = () => {
           <div className=" flex items-center space-x-2">
             <div className="hidden md:flex items-center space-x-2 text-sm text-black uppercase font-semibold italic">
               <div className="flex items-center animate-pulse text-custom-blue">
-                <img src="/loc.png" alt="Bangalore" className="mr-1 w-5 h-5" />
+                <image src="/loc.png" alt="Bangalore" className="mr-1 w-5 h-5" />
                 <p>Bangalore</p>
               </div>
               <div className="flex items-center animate-pulse text-custom-blue">
-                <img src="/loc.png" alt="Hyderabad" className="mr-1 w-5 h-5" />
+                <image src="/loc.png" alt="Hyderabad" className="mr-1 w-5 h-5" />
                 <p>Hyderabad</p>
               </div>
               <div className="flex items-center animate-pulse text-custom-blue">
-                <img src="/loc.png" alt="USA" className="mr-1 w-5 h-5" />
+                <image src="/loc.png" alt="USA" className="mr-1 w-5 h-5" />
                 <p>USA</p>
               </div>
             </div>
@@ -110,7 +110,7 @@ const Navbar = () => {
                 href="tel:+919160449000"
                 className="flex items-center text-white py-1 px-0 rounded-lg text-xs lg:text-sm whitespace-nowrap font-bold uppercase mr-3"
               >
-                <img src="/phone.gif" alt="Phone" className="h-6 w-6 mr-1" />
+                <image src="/phone.gif" alt="Phone" className="h-6 w-6 mr-1" />
                 <span className="text-custom-blue">+91 9160449000</span>
               </a>
             </div>

@@ -13,7 +13,7 @@ const Ausstud = () => {
           Australia Student Visa  - <span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
         </h3>
       </div>
-      <h3 className="text-black m-2  mb-4 text-lxl sm:text-xl text-blue-500">
+      <h3 className="text m-2  mb-4 text-lxl sm:text-xl text-blue-500">
         Affordable Education at Top-Ranked Universities
       </h3>
       <p className="m-2">
@@ -21,7 +21,7 @@ const Ausstud = () => {
       </p>
       <div className="flex-col lg:flex-row items-start h-auto lg:space-x-6 space-y-4 lg:space-y-0">
         <div className="flex justify-center m-6 flex-shrink-0 mx-auto lg:mx-0">
-          <img
+          <image
             src="/assets/Ausstud.png"
             alt="Image description"
            

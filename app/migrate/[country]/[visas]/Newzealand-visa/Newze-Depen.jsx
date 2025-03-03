@@ -20,7 +20,7 @@ const Newzedepen = () => {
            
             <div className="flex mb-6 flex-col justify-center lg:flex-row items-start h-auto lg:space-x-6 space-y-4 lg:space-y-0">
                 <div className="flex-shrink-0 mx-auto lg:mx-0">
-                    <img
+                    <image
                         src="/assets/Newzestud.png"
                         alt="Australia Business Visa"
 

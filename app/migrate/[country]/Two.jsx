@@ -57,7 +57,7 @@ const countryVisaData = {
   "new-zealand": [
     { name: "New Zealand Permanent Resident Visa", path: "/migrate/new-zealand/permanent-resident-visa" },
     { name: "New Zealand Work Visa", path: "/migrate/new-zealand/work-visa" },
-    { name: "New Zealand Student Visa", path: "/migrate/new-zealand/skilled-work-visa" },
+    { name: "New Zealand Student Visa", path: "/migrate/new-zealand/student-visa"},
     { name: "New Zealand Skilled Work Visa", path: "/migrate/new-zealand/skilled-work-visa" },
     { name: "New Zealand Business Visa", path: "/migrate/new-zealand/business-visa" },
     { name: "New Zealand Tourist Visa", path: "/migrate/new-zealand/tourist-visa" },
@@ -84,7 +84,7 @@ const countryVisaData = {
     { name: "Denmark Business Visa", path: "/migrate/denmark/business-visa" },
   ],
   uae: [
-    { name: "UAE Student Visa", path: "/migrate/uae/work-visa" },
+    { name: "UAE Student Visa", path: "/migrate/uae/student-visa"},
     { name: "UAE Golden Visa", path: "/migrate/uae/golden-visa" },
   { name: "UAE Work Visa", path: "/migrate/uae/work-visa" },
   { name: "UAE Green Visa", path: "/migrate/uae/green-visa" },

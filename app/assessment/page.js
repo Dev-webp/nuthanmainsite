@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Footer from "./components/Footer";
+
 
 
 import HeroSection from "./components/HeroSection"; 
