@@ -11,7 +11,7 @@ import WhyChooseUs from "./components/WhyChooseUs";
 import ReviewSlider from "./components/ReviewSlider";
 
 
-import Nav from "./components/Nav"
+
 
 import "./components/styles.css"; // Importing the styles.css file
 
@@ -30,7 +30,7 @@ const ContactPage = () => {
       
       
       
-<Nav></Nav>
+
      
       <HeroSection />  
       
