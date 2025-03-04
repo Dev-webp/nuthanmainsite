@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import Content from "./Content";
 
 const countriesData = [
+  
   { name: "Migrate to Germany", path: "/migrate/germany" },
   { name: "Migrate to Canada", path: "/migrate/canada" },
   { name: "Migrate to UnitedStates", path: "/migrate/united-states" },

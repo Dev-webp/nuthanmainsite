@@ -117,9 +117,7 @@ const Form = () => {
         setPopupVisible(true);
     
         // Hide popup after 3-4 seconds
-        setTimeout(() => {
-          setPopupVisible(false);
-        }, 3000);
+        setTimeout(() => setPopupVisible(false), 5000);
       }
     
     } catch (error) {

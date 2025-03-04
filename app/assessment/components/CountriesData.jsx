@@ -36,11 +36,12 @@ const CountriesData = () => {
         
         {/* Left Sidebar - Country List */}
         <div className="w-full lg:w-[30%] sticky top-0 h-full">
-          <h2 className="text-2xl font-bold mb-6 uppercase text-center tracking-wide bg-gradient-to-r from-black to-orange-500 bg-clip-text text-transparent"
-          >
-            Need Assistance? <br />
-           <h2 className="text-2xl font-bold text-black">Select Your Destination!</h2> 
-          </h2>
+        <h2 className="text-2xl font-bold mb-6 uppercase text-center tracking-wide bg-gradient-to-r from-black to-orange-500 bg-clip-text text-transparent">
+  Need Assistance? <br />
+  <span className="text-2xl font-bold text-black">Select Your Destination!</span>
+</h2>
+
+          
           <ul className="space-y-4 flex flex-col items-center lg:items-center">
             {Object.keys(countriesData).map((country, index) => (
               <li
