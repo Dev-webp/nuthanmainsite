@@ -11,7 +11,7 @@ const countriesData = [
   { name: "Migrate to UnitedStates", path: "/migrate/united-states" },
   { name: "Migrate to Australia", path: "/migrate/australia", },
   { name: "Migrate to United Kingdom", path: "/migrate/united-kingdom",  },
-  { name: "Migrate to New Zealand", path: "/migrate/new-zealand",  },
+  { name: "Migrate to New Zealand", path: "/migrate/new-zealand", image: "/public/assets/1.png", },
   { name: "Migrate to South Africa", path: "/migrate/south-africa", },
   { name: "Migrate to Hong Kong", path: "/migrate/hong-kong",  },
   { name: "Migrate to Denmark", path: "/migrate/denmark", },

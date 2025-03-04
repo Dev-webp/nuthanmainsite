@@ -22,30 +22,58 @@ export default function AIChat() {
   const sendMessage = async (messageContent) => {
     const userMessage = { role: "user", content: messageContent };
     setMessages((prev) => [...prev, userMessage]);
-
+  
     setInput("");
     setLoading(true);
-
+  
     let botResponse = "";
-
+  
     if (!chatStage) {
       botResponse = "Before proceeding, may I know your name?";
       setChatStage("askName");
     } else if (chatStage === "askName") {
-      setUserData((prev) => ({ ...prev, name: messageContent }));
-      botResponse = `Thank you, ${messageContent}! Can you provide your mobile number?`;
-      setChatStage("askPhone");
+      if (!messageContent.trim()) {
+        botResponse = "Please enter a valid name.";
+      } else {
+        setUserData((prev) => ({ ...prev, name: messageContent }));
+        botResponse = `Thanks, ${messageContent}! Now, please enter your 10-digit phone number.`;
+        setChatStage("askPhone");
+      }
     } else if (chatStage === "askPhone") {
-      setUserData((prev) => ({ ...prev, phone: messageContent }));
-      botResponse = "Thank you! We will get back to you shortly.";
-      setChatStage("completed");
+      if (!/^\d{10}$/.test(messageContent)) {
+        botResponse = "Please enter a valid 10-digit phone number.";
+      } else {
+        setUserData((prev) => ({ ...prev, phone: messageContent }));
+        botResponse = "Thank you! We will email you the chat details shortly.";
+  
+        // Send email with collected data
+        const response = await fetch("/api/send-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: userData.name,
+            phone: messageContent,
+            chatHistory: [...messages, userMessage],
+          }),
+        });
+  
+        if (response.ok) {
+          botResponse += " Email sent successfully!";
+        } else {
+          botResponse += " But we couldn't send the email.";
+        }
+  
+        setChatStage("completed");
+      }
     }
-
+  
     setTimeout(() => {
       setMessages((prev) => [...prev, { role: "bot", content: botResponse }]);
       setLoading(false);
     }, 1000);
   };
+  
+  
 
   return (
     <div className="fixed z-50 bottom-20 right-3">

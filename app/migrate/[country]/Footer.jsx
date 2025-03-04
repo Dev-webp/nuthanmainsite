@@ -40,11 +40,11 @@ const Footer = () => {
         <li><a href="#" className="hover-underline">Settle in Germany</a></li>
         <li><a href="#" className="hover-underline">Settle in UK</a></li>
         <li><a href="#" className="hover-underline">Settle in USA</a></li>
-        {/* <li><a href="#" className="hover-underline">Settle in New Zealand</a></li>
+        <li><a href="#" className="hover-underline">Settle in New Zealand</a></li>
         <li><a href="#" className="hover-underline">Settle in South Africa</a></li>
         <li><a href="#" className="hover-underline">Settle in Ireland</a></li>
         <li><a href="#" className="hover-underline">Settle in UAE</a></li>
-        <li><a href="#" className="hover-underline">Settle in Denmark</a></li> */}
+        <li><a href="#" className="hover-underline">Settle in Denmark</a></li> 
     </ul>
 </div>
 

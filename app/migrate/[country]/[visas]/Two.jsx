@@ -204,11 +204,7 @@ const visaComponents = {
 };
 
 const defaultBackgroundImages = {
-  germany: '/germanyimg.jpg',
-  canada: '/canadabgimg.jpg',
-  "united-states": '/usabgimg.jpg',
-  australia: '/australiabgimg.jpg',
-  // add other countries as needed
+  
 };
 
 

@@ -64,7 +64,7 @@ const ReviewsSlider = () => {
           {reviews.map((review, index) => (
             <div key={index} className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-lg mb-6 border border-orange-500 h-[400px]">
               <div className="flex justify-center w-full mb-4" style={{marginBottom:'20px'}}>
-                <image
+                <img
                   src={review.photo}
                   alt={review.name}
                   className="w-24 h-24 object-cover rounded-full"
